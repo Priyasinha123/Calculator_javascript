@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>calculator</title>
+        <style type="text/css">
+            .all{
+                background-color:rgba(250,10,20,0.5);
+            }
+            h1{
+                color:rgba(20,190,250,0.7);
+                font-size:70px;
+                margin:auto;
+                margin-left:40%;
+                text-shadow: 4px 5px purple;
+            }
+            .main{
+              width: 450px;
+              height: 200px;
+              background-color: rgba(20,0,80,0.7); 
+              margin:auto;
+              margin-top:100px;
+            }
+            #first{
+                height:30px;
+                margin-left:35px;
+                margin-top:20px;
+            }
+            #second{
+                height:30px;
+            }
+            #on{
+                margin-left:35px;
+                height:30px;
+                background-color:green;
+                color:white;
+            }
+            #result{
+                width:300px;
+                height:30px;
+            }
+        </style>
+    </head>
+    
+    <body class="all"><h1>Calculator</h1>
+        <div class="main">
+        <input type="number" name="first" id="first" step="any"/>
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">x</option>
+            <option value="/">/</option>
+        </select>
+        <input type="number" name="second" id="second" step="any"/>
+        <br/><br/>
+        <button onclick="cal()" id="on">Calculate</button>
+        <input type="text" name="" id="result" readonly="">
+    </div>
+    </body>
+    <script type="text/javascript">
+        function cal(){
+            var operator1 = document.getElementById('first').value;
+            var operator2 = document.getElementById('second').value;
+            var operators = document.getElementById('operator').value;
+            if (operators == "+"){
+                var res = parseInt(operator1) + parseInt(operator2);
+            }
+            if (operators == "-"){
+                var res = parseInt(operator1) - parseInt(operator2);
+            }
+            if (operators == "*"){
+                var res = parseInt(operator1) * parseInt(operator2);
+            }
+            if (operators == "/"){
+                var res = parseInt(operator1) / parseInt(operator2);
+            }
+            document.getElementById('result').value = res;
+        }
+    </script>
+</html>
